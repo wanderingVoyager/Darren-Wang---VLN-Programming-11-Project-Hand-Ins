@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
+   <children>
+      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0">
+         <children>
+            <Label text="Add to pool: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textAmtEntered" alignment="CENTER" promptText="Enter amount to play">
+               <HBox.margin>
+                  <Insets left="10.0" top="3.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="buttonEnter" mnemonicParsing="false" onAction="#enterMoneyToPlay" text="Enter">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="600.0">
+         <children>
+            <Label text="Dice 1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="buttonRollDice1" disable="true" mnemonicParsing="false" onAction="#rollDice1" prefHeight="28.0" prefWidth="49.0" text="Roll">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="lblDice1" text="Dice 1 Result: ">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0">
+         <children>
+            <Label text="Do you think Dice 2 will have a larger value?">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="buttonNo" disable="true" mnemonicParsing="false" onAction="#dice2Smaller" text="No">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonYes" disable="true" mnemonicParsing="false" onAction="#dice2Larger" text="Yes">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Dice 2 ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDice2" text="Dice 2 Result: ">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="63.0" prefWidth="601.0">
+         <children>
+            <Label fx:id="lblFinalResult" alignment="CENTER" text="Final Result: ">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="601.0">
+         <children>
+            <Label fx:id="lblTotalAmt" alignment="CENTER" contentDisplay="CENTER" prefHeight="97.0" prefWidth="178.0" text="\$0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonReplay" disable="true" mnemonicParsing="false" onAction="#replay" text="Replay!">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
