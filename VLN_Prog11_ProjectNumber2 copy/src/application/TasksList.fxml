@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <TabPane prefHeight="464.0" prefWidth="617.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Create Tasks">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="241.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks List">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="76.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please create your task by filling in the required areas below.">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="70.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Name: ">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="76.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Due Date: ">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="textTaskName" layoutX="161.0" layoutY="99.0" prefHeight="26.0" prefWidth="317.0" promptText="Enter the task name" />
+                        <TextField fx:id="textDay" layoutX="161.0" layoutY="136.0" prefHeight="26.0" prefWidth="121.0" promptText="Day (ie. 9)" />
+                        <TextField fx:id="textMonth" layoutX="161.0" layoutY="162.0" prefHeight="26.0" prefWidth="122.0" promptText="Month (ie. 7)" />
+                        <TextField fx:id="textYear" layoutX="162.0" layoutY="188.0" prefHeight="26.0" prefWidth="121.0" promptText="Year (ie. 2015)" />
+                        <Button fx:id="saveTaskButton" layoutX="274.0" layoutY="281.0" mnemonicParsing="false" onAction="#saveTask" text="Save">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="textHour" layoutX="320.0" layoutY="145.0" promptText="Hour (In 24 Hour Time)" />
+                        <TextField fx:id="textMinute" layoutX="320.0" layoutY="176.0" promptText="Minute (ie. 25)" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Display Tasks">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="tasksList" layoutX="14.0" layoutY="30.0" onMouseClicked="#displayTaskInfo" prefHeight="367.0" prefWidth="209.0" />
+                        <Button fx:id="buttonLoadToDo" layoutX="364.0" layoutY="336.0" mnemonicParsing="false" onAction="#loadToDoTasks" text="Load To Do Tasks" />
+                        <Button fx:id="buttonLoadOverdue" layoutX="357.0" layoutY="371.0" mnemonicParsing="false" onAction="#loadOverdueTasks" text="Load Overdue Tasks" />
+                        <Button fx:id="buttonLoadAll" layoutX="374.0" layoutY="302.0" mnemonicParsing="false" onAction="#loadAllTasks" text="Load All Tasks" />
+                        <HBox layoutX="260.0" layoutY="86.0" prefHeight="130.0" prefWidth="325.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Task Name: ">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Created: ">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Due Date: ">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Overdue: ">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="130.0" prefWidth="225.0">
+                                 <children>
+                                    <Label fx:id="lblTaskName">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblDateCreated">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblDueDate">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblOverdue">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Text layoutX="338.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Information">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="buttonMarkAsDone" layoutX="367.0" layoutY="214.0" mnemonicParsing="false" onAction="#deleteTask" text="Mark As Done">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</HBox>
